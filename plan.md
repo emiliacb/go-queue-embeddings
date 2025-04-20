@@ -34,7 +34,8 @@
 
 TODO:
 - [X] Setup repo and write the README.md
-- [ ] Set up basic server with GIN
+- [X] Set up basic server with GIN
+- [ ] Add a structured logger
 - [ ] Create a simple frontend to upload the PDF and see the process (later we can use Next.js)
 - [ ] Interfaces: 
     - Queue: 

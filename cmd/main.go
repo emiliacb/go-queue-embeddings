@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gin-gonic/gin"
+)
+
+func setupRouter() *gin.Engine {
+	router := gin.Default()
+	router.GET("/health", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "OK",
+		})
+	})
+	return router
+}
 
 func main() {
-	fmt.Println("Hello, World!")
+	router := setupRouter()
+	router.Run(":8080")
 }
