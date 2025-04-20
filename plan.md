@@ -41,11 +41,16 @@ TODO:
     - Queue: 
         - Send(job: Job)
         - Receive(id: string) -> Job
-    - Embedding adapter:
-        - Embed(text: string, options: EmbedOptions) -> []float32
-    - Chunk strategy:
-        - Chunk(text: string, options: ChunkOptions) -> []string
-    - Document storage:
+    - EmbeddingAdapter:
+        - Embed(text: string, config: EmbedConfig) -> []float32
+        - Config:
+            - model: string
+            - api_key: string
+    - ChunkStrategy:
+        - Chunk(text: string, config: ChunkConfig) -> []string
+        - Config:
+            - chunk_size: int
+            - chunk_overlap: int
+    - DocumentStorage:
         - upsert(id: string, status: string, progress: int, data, metadata)
-
-
+- [ ] Add docker and deploy to Hugging Face ASAP to avoid having unknown issues with the server later.
