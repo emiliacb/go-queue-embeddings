@@ -14,8 +14,8 @@ FROM ollama/ollama:latest
 RUN apt-get update && apt-get install -y --no-install-recommends supervisor curl && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /app/server /app/server
-COPY templates/ /app/templates/
-COPY static/ /app/static/
+COPY --from=builder /app/templates/ /app/templates/
+COPY --from=builder /app/static/ /app/static/
 
 COPY supervisord.conf /etc/supervisor/conf.d/app.conf
 

@@ -38,4 +38,4 @@ fi
 
 # --- Start the Go Application ---
 echo "Starting Go application (/app/server)..."
-exec /app/server 
+cd /app && exec /app/server
