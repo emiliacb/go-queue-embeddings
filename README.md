@@ -8,6 +8,22 @@ A minimal Go service that queues long-running embedding tasks with self hosted i
 - Provide a working pipeline for document processing and embedding
 - Use modular interfaces for future extensibility
 
+## Local Development
+
+### Using Docker
+
+1. Build the container:
+```bash
+docker build -t go-queue-embeddings .
+```
+
+2. Run the container (maps port 8080):
+```bash
+docker run -p 8080:8080 go-queue-embeddings
+```
+
+**Prerequisites:** Ensure Docker is installed on your system
+
 ### Key Decisions
 - Gin because is popular and easy to use
 - Using freely an hexagonal architecture approach to ensure extensibility, specially decoupling the logic from the embedding provider and the storage
