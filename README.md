@@ -1,18 +1,20 @@
 # go-queue-embeddings WIP
 A minimal Go service that queues long-running embedding tasks.
 
-**Goals:**
+******
+
+## Goals:
 - Showcase concurrency patterns in Go using worker queues
 - Provide a working pipeline for document processing and embedding
-- Focus on modular interfaces for testing, mocking, and future extensibility
+- Use modular interfaces for future extensibility
 
 ### Key Decisions
 - Gin because is popular and easy to use
 - Using freely an hexagonal architecture approach to ensure extensibility, specially decoupling the logic from the embedding provider and the storage
+- Started using Ollama because it has a huge community and is optimized for different hardware out of the box
 - Saving as the process JSON in a temp folder for this POC but the code is expandable to save in a database or other storage in the future
 - Plan and Progress are tracked in [plan.md](plan.md) for clarity and future reference.
 
-<br />
 <br />
 <br />
 
