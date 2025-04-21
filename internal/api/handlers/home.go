@@ -1,9 +1,11 @@
 package handlers
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 
 func HomeHandler(c *gin.Context) {
-	c.File("static/home.html")
+	c.HTML(http.StatusOK, "home.html", gin.H{})
 }

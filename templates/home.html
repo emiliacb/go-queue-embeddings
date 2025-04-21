@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Go Queue Embeddings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>  
+    <div class="main_container">
+        <form hx-post="/embed" hx-target="#embeddings" hx-indicator="#loading">
+            <h1>Go Queue Embeddings</h1>
+            <p>A minimal Go service that queues long-running embedding tasks.</p>
+            <div class="inputs_container">
+                <label for="text">Text to embed</label>
+                <textarea name="text" placeholder="Enter a text to embed"></textarea>
+                <button type="submit">Embed</button>
+            </div>
+        </form>
+        <h2>Embeddings</h2>
+        <div class="outputs_container">
+            <div id="loading">loading...</div>
+            <pre id="embeddings">Your embeddings will appear here</pre>
+        </div>
+    </div>
+</body>
+
+</html>

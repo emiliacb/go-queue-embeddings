@@ -7,6 +7,8 @@ import (
 
 func setupRouter() *gin.Engine {
 	router := gin.Default()
+	router.LoadHTMLGlob("templates/*.html")
+
 	router.GET("/", handlers.HomeHandler)
 	router.Static("/static", "./static")
 	router.GET("/health", handlers.HealthHandler)
