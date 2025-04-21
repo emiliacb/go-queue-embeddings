@@ -27,7 +27,7 @@ func NewOllamaEmbeddingAdapter() *OllamaEmbeddingAdapter {
 
 const (
 	DefaultOllamaBaseURL = "http://localhost:11434"
-	DefaultOllamaModel = "snowflake-arctic-embed2:568m-l-fp16"
+	DefaultOllamaModel = "granite-embedding"
 )
 
 func (a *OllamaEmbeddingAdapter) Embed(text string, config ports.EmbeddingConfig) ([]float32, error) {

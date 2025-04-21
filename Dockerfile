@@ -20,7 +20,7 @@ RUN echo '#!/bin/sh' > /start.sh && \
     echo 'echo "Waiting for Ollama to start..."' >> /start.sh && \
     echo 'sleep 5' >> /start.sh && \
     echo 'echo "Pulling snowflake-arctic-embed2 model..."' >> /start.sh && \
-    echo 'ollama pull snowflake-arctic-embed2:568m-l-fp16' >> /start.sh && \
+    echo 'ollama pull granite-embedding' >> /start.sh && \
     echo 'echo "Starting Go application..."' >> /start.sh && \
     echo '/app/server' >> /start.sh && \
     chmod +x /start.sh
