@@ -37,7 +37,7 @@ docker run -p 8080:8080 go-queue-embeddings
 - Started using Ollama because it has a huge community and is optimized for different hardware out of the box
 - Saving as the process JSON in a temp folder for this POC but the code is expandable to save in a database or other storage in the future
 - Plan and Progress are tracked in [plan.md](plan.md) for clarity and future reference.
-- Using supervisord to run this in a huggingface space
+- Added supervisord to run this in a huggingface space but running 2 ports inside hugginface is giving me a lot of issues so i just used render.com
 
 <br />
 <br />
