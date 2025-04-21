@@ -9,7 +9,7 @@ A minimal Go service that queues long-running embedding tasks with self hosted i
 [go-queue-embeddings.onrender.com
 ](https://go-queue-embeddings.onrender.com/)
 > ⚠️ This demo runs on Render.com's free tier. It may show a 502 error during initialization after periods of inactivity. If this happens, please wait a few seconds and refresh the page.
-> 
+
 ## Goals:
 - Showcase concurrency patterns in Go using worker queues
 - Provide a working pipeline for document processing and embedding
@@ -37,7 +37,7 @@ docker run -p 8080:8080 go-queue-embeddings
 - Started using Ollama because it has a huge community and is optimized for different hardware out of the box
 - Saving as the process JSON in a temp folder for this POC but the code is expandable to save in a database or other storage in the future
 - Plan and Progress are tracked in [plan.md](plan.md) for clarity and future reference.
-- Added supervisord to run this in a huggingface space but running 2 ports inside hugginface is giving me a lot of issues so i just used render.com
+- Added Supervisord to run this in a Hugging Face Space, but managing two ports inside Hugging Face caused issues, so we switched to Render.com instead.
 
 <br />
 <br />
