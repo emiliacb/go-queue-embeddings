@@ -9,16 +9,12 @@ COPY . .
 
 RUN go build -o /app/server ./cmd/main.go
 
-# Usar la imagen de Ollama como base
 FROM ollama/ollama:latest
 
-# Copiar el binario compilado de la aplicación Go
 COPY --from=builder /app/server /app/server
 
-# Exponer solo el puerto de la aplicación Go
 EXPOSE 8080
 
-# Crear el script de inicio
 RUN echo '#!/bin/sh' > /start.sh && \
     echo 'ollama serve &' >> /start.sh && \
     echo 'echo "Waiting for Ollama to start..."' >> /start.sh && \
