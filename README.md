@@ -8,6 +8,10 @@ app_port: 8080
 pinned: false
 ---
 
+<img width="500" alt="Screenshot 2025-04-21 at 3 57 00 AM" src="https://github.com/user-attachments/assets/55ae783c-01cc-4336-8204-2289dc5c3358" />
+
+******
+
 # go-queue-embeddings WIP
 A minimal Go service that queues long-running embedding tasks.
 
