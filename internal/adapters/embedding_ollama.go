@@ -52,10 +52,11 @@ func (a *OllamaEmbeddingAdapter) Embed(text string, config ports.EmbeddingConfig
 	}
 
 	resp, err := http.Post(
-		fmt.Sprintf("%s/api/embed", baseUrl),
+		fmt.Sprintf("%s/api/embeddings", baseUrl),
 		"application/json",
 		bytes.NewBuffer(jsonBody),
 	)
+
 	if err != nil {
 		return nil, fmt.Errorf("error making request to Ollama: %w", err)
 	}
