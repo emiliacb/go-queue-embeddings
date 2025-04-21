@@ -8,7 +8,7 @@ A minimal Go service that queues long-running embedding tasks with self hosted i
 **Live on:**
 [go-queue-embeddings.onrender.com
 ](https://go-queue-embeddings.onrender.com/)
-> ⚠️ This demo runs on Render.com's free tier. It may show a 502 error during initialization after periods of inactivity. If this happens, please wait a few seconds and refresh the page.RetryClaude can make mistakes. Please double-check responses.
+> ⚠️ This demo runs on Render.com's free tier. It may show a 502 error during initialization after periods of inactivity. If this happens, please wait a few seconds and refresh the page.
 > 
 ## Goals:
 - Showcase concurrency patterns in Go using worker queues
