@@ -3,9 +3,9 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/gin-gonic/gin"
 	"github.com/emiliacb/go-queue-embeddings/internal/app/domain"
 	"github.com/emiliacb/go-queue-embeddings/internal/app/ports"
+	"github.com/gin-gonic/gin"
 )
 
 // EmbedHandler is a temporary endpoint for development and debugging purposes.
@@ -15,7 +15,7 @@ import (
 func EmbedHandler(c *gin.Context) {
 	embedder := domain.GetContainer().Embedder
 
-	text := c.Query("text")
+	text := c.PostForm("text")
 	if text == "" {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "text parameter is required"})
 		return

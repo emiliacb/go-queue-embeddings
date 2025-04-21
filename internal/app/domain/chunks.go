@@ -7,7 +7,7 @@ type ChunkStrategy interface {
 }
 
 type ChunkConfig struct {
-	ChunkSize int
+	ChunkSize    int
 	ChunkOverlap int
 }
 
@@ -15,5 +15,5 @@ type NaiveChunkStrategy struct{}
 
 func (s *NaiveChunkStrategy) Chunk(text string, config ChunkConfig) ([]string, error) {
 	return strings.Split(text, " "), nil
-}
 
+}
