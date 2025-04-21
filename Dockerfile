@@ -17,8 +17,8 @@ COPY --from=builder /app/server /app/server
 
 COPY supervisord.conf /etc/supervisor/conf.d/app.conf
 
-COPY supervisor_start.sh /app/supervisor_start.sh
-RUN chmod +x /app/supervisor_start.sh
+COPY supervisord_start.sh /app/supervisord_start.sh
+RUN chmod +x /app/supervisord_start.sh
 
 EXPOSE 8080
 ENTRYPOINT []
