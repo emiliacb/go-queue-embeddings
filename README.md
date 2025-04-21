@@ -3,6 +3,9 @@
 # [WIP] go-queue-embeddings
 A minimal Go service that queues long-running embedding tasks with self hosted inference.
 
+[go-queue-embeddings.onrender.com
+](https://go-queue-embeddings.onrender.com/)
+
 ## Goals:
 - Showcase concurrency patterns in Go using worker queues
 - Provide a working pipeline for document processing and embedding
