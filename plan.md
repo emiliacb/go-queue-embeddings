@@ -60,7 +60,7 @@ TODO:
         - config:
             - model: string
             - api_key: string
-    - [X] chunkStrategy:
+    - [ ] chunkStrategy:
         - chunk(text: string, config: ChunkConfig) -> []string
         - config:
             - chunk_size: int
