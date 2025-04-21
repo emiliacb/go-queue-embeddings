@@ -1,3 +1,12 @@
+---
+title: Go Queue Embeddings WIP
+emoji: ⚙️
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
 # go-queue-embeddings WIP
 A minimal Go service that queues long-running embedding tasks.
 
