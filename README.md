@@ -38,6 +38,7 @@ docker run -p 8080:8080 go-queue-embeddings
 - Saving as the process JSON in a temp folder for this POC but the code is expandable to save in a database or other storage in the future
 - Plan and Progress are tracked in [plan.md](plan.md) for clarity and future reference.
 - Added Supervisord to run this in a Hugging Face Space, but managing two ports inside Hugging Face caused issues, so we switched to Render.com instead. Later we can revisit this issue, for example using tfgo instead of ollama.
+- Choosed HTMX to mantain a lean view implementation, the focus is the go service. But we can implement server side react or next.js later.
 
 <br />
 <br />
