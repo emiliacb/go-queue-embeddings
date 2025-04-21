@@ -1,8 +1,11 @@
 <img width="500" alt="Screenshot 2025-04-21 at 3 57 00 AM" src="https://github.com/user-attachments/assets/55ae783c-01cc-4336-8204-2289dc5c3358" />
 
 # [WIP] go-queue-embeddings
-A minimal Go service that queues long-running embedding tasks with self hosted inference. (Queue implementation is TODO)
+A minimal Go service that queues long-running embedding tasks with self hosted inference. 
 
+☢️ Queue implementation is TODO
+
+**Live on:**
 [go-queue-embeddings.onrender.com
 ](https://go-queue-embeddings.onrender.com/)
 
