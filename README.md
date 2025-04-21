@@ -12,6 +12,12 @@ A minimal Go service that queues long-running embedding tasks.
 - Saving as the process JSON in a temp folder for this POC but the code is expandable to save in a database or other storage in the future
 - Plan and Progress are tracked in [plan.md](plan.md) for clarity and future reference.
 
+<br />
+<br />
+<br />
+
+******
+
 ### [EXPECTED] API Flow
 1. **PDF Upload**
    - Route: `/upload`

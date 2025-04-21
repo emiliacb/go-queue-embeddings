@@ -8,6 +8,10 @@ import (
 	"github.com/emiliacb/go-queue-embeddings/internal/app/ports"
 )
 
+// EmbedHandler is a temporary endpoint for development and debugging purposes.
+// It provides direct access to the embedding functionality and will be removed
+// once the proper /upload endpoint is implemented. This endpoint should not be
+// used in production.
 func EmbedHandler(c *gin.Context) {
 	embedder := domain.GetContainer().Embedder
 
