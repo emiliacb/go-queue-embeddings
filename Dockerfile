@@ -11,19 +11,15 @@ RUN go build -o /app/server ./cmd/main.go
 
 FROM ollama/ollama:latest
 
+RUN apt-get update && apt-get install -y --no-install-recommends supervisor curl && rm -rf /var/lib/apt/lists/*
+
 COPY --from=builder /app/server /app/server
 
+COPY supervisord.conf /etc/supervisor/conf.d/app.conf
+
+COPY supervisor_start.sh /app/supervisor_start.sh
+RUN chmod +x /app/supervisor_start.sh
+
 EXPOSE 8080
-
-RUN echo '#!/bin/sh' > /start.sh && \
-    echo 'ollama serve &' >> /start.sh && \
-    echo 'echo "Waiting for Ollama to start..."' >> /start.sh && \
-    echo 'sleep 5' >> /start.sh && \
-    echo 'echo "Pulling snowflake-arctic-embed2 model..."' >> /start.sh && \
-    echo 'ollama pull granite-embedding' >> /start.sh && \
-    echo 'echo "Starting Go application..."' >> /start.sh && \
-    echo '/app/server' >> /start.sh && \
-    chmod +x /start.sh
-
-ENTRYPOINT ["/bin/sh"]
-CMD ["/start.sh"]
+ENTRYPOINT []
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/app.conf"]
