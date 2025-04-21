@@ -1,20 +1,12 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"github.com/emiliacb/go-queue-embeddings/internal/app"
+	"github.com/emiliacb/go-queue-embeddings/internal/app/domain"
+	"github.com/emiliacb/go-queue-embeddings/internal/adapters"
 )
 
-func setupRouter() *gin.Engine {
-	router := gin.Default()
-	router.GET("/health", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "OK",
-		})
-	})
-	return router
-}
-
 func main() {
-	router := setupRouter()
-	router.Run(":8080")
+	domain.NewContainer(adapters.NewOllamaEmbeddingAdapter())
+	app.StartServer()
 }

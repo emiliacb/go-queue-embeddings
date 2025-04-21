@@ -33,24 +33,31 @@
 ## POC VERSION
 
 TODO:
-- [X] Setup repo and write the README.md
-- [X] Set up basic server with GIN
-- [ ] Add a structured logger
-- [ ] Create a simple frontend to upload the PDF and see the process (later we can use Next.js)
-- [ ] Interfaces: 
-    - Queue: 
-        - Send(job: Job)
-        - Receive(id: string) -> Job
-    - EmbeddingAdapter:
-        - Embed(text: string, config: EmbedConfig) -> []float32
-        - Config:
+- [X] setup repo and write the README.md
+- [X] set up basic server with GIN
+- [X] simple /embed endpoint with Ollama
+- [X] interfaces: 
+    - [ ] queue: 
+        - send(job: Job)
+        - receive(id: string) -> Job
+    - [X] embeddingAdapter:
+        - embed(text: string, config: EmbedConfig) -> []float32
+        - config:
             - model: string
             - api_key: string
-    - ChunkStrategy:
-        - Chunk(text: string, config: ChunkConfig) -> []string
-        - Config:
+    - [X] chunkStrategy:
+        - chunk(text: string, config: ChunkConfig) -> []string
+        - config:
             - chunk_size: int
             - chunk_overlap: int
-    - DocumentStorage:
+    - [X] documentStorageAdapter:
         - upsert(id: string, status: string, progress: int, data, metadata)
-- [ ] Add docker and deploy to Hugging Face ASAP to avoid having unknown issues with the server later.
+        - get(id: string) -> ([]byte, error)
+- [ ] docker config and deploy to Hugging Face ASAP to avoid having unknown issues with the server later.
+- [ ] basic queue and return the process id
+- [ ] implement /process/<process_id> endpoint to return the JSON file
+- [ ] create a simple frontend to upload the PDF and see the process with short polling (HTMX now, later we can use Next.js)
+- [ ] save the json file
+- [ ] implement the file upload and chunking
+- [ ] Add structured logs
+- [ ] Add tests
