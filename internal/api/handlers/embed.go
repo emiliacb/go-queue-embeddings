@@ -5,6 +5,7 @@ import (
 
 	"github.com/emiliacb/go-queue-embeddings/internal/app/domain"
 	"github.com/emiliacb/go-queue-embeddings/internal/app/ports"
+	"github.com/emiliacb/go-queue-embeddings/internal/app/services"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,8 +13,10 @@ import (
 // It provides direct access to the embedding functionality and will be removed
 // once the proper /upload endpoint is implemented. This endpoint should not be
 // used in production.
+// Deprecated: This handler is temporary and will be removed. Use the /upload endpoint instead.
 func EmbedHandler(c *gin.Context) {
 	embedder := domain.GetContainer().Embedder
+	embeddingService := services.NewEmbeddingService(embedder)
 
 	text := c.PostForm("text")
 	if text == "" {
@@ -21,7 +24,7 @@ func EmbedHandler(c *gin.Context) {
 		return
 	}
 
-	embedding, err := embedder.Embed(text, ports.EmbeddingConfig{})
+	embedding, err := embeddingService.EmbedOne(text, ports.EmbeddingConfig{})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return

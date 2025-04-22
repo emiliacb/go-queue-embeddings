@@ -13,8 +13,8 @@
 
 <body>  
     <div class="main_container">
-        <form hx-post="/embed" hx-target="#embeddings" hx-indicator="#loading">
-            <h1>Go Queue Embeddings</h1>
+        <form hx-post="/documents" hx-target="#embeddings" hx-indicator="#loading">
+            <h1>Go Queue Embeddings v2</h1>
             <p>A minimal Go service that queues long-running embedding tasks.</p>
             <div class="inputs_container">
                 <label for="text">Text to embed</label>
@@ -25,12 +25,13 @@
         <h2>Embeddings</h2>
         <div class="outputs_container">
             <div class="outputs_holder no-scrollbar">
-                <pre id="embeddings">Your embeddings will appear here</pre>
+                <div id="embeddings">Your embeddings will appear here</div>
                 <div id="loading">loading...</div>
             </div>
             <div class="overflow-gradient"></div>
         </div>
     </div>
+    <script src="/static/script.mjs" type="module"></script>
 </body>
 
 </html>

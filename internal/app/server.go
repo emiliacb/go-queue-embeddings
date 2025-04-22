@@ -10,9 +10,12 @@ func setupRouter() *gin.Engine {
 	router.LoadHTMLGlob("templates/*.html")
 
 	router.GET("/", handlers.HomeHandler)
+	router.GET("/v2", handlers.HomeHandlerV2)
 	router.Static("/static", "./static")
 	router.GET("/health", handlers.HealthHandler)
 	router.POST("/embed", handlers.EmbedHandler)
+	router.POST("/documents", handlers.UploadHandler)
+	router.GET("/documents/:id", handlers.DocumentHandler)
 	return router
 }
 
